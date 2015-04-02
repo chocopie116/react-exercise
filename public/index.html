@@ -10,17 +10,18 @@
 <div id="content"></div>
 <script type="text/jsx">
 // Your code here
-var CommentBox = React.createClass({
+var CommentBox = React.createClass({displayName: 'CommentBox',
     render: function() {
         return(
-            <div className="CommentBox">
-                Hello, world!
-            </div>
+            React.createElement('div', {className: "commentBox"},
+                "Hello, world! without div by using React.createElement"
+            )
         );
     }
 });
+
 React.render(
-    <CommentBox />,
+    React.createElement(CommentBox, null),
     document.getElementById('content')
 );
 </script>
